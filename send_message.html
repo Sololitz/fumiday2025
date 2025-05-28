@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fumi's Birthday 2025: ส่งข้อความอวยพร</title>
+    <title>Fumi's Day 2025: ส่งข้อความอวยพร</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <nav id="navbar">
+        <ul>
+            <li id="nav-brand"><a href="https://www.youtube.com/@FumiHausu" target="_blank">Fumi's Birthday 2025</a></li>  
+            <li><button id="nav-toggle">close</button></li>    
+            <div id="nav-collapse">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="about_fumi.html">เกี่ยวกับฟูมิ</a></li>   
+                <li><a href="display_message.html">อ่านคำอวยพร</a></li>
+                <li><a href="send_message.html">ส่งคำอวยพร</a></li>             
+            </div>                                 
+        </ul>
+    </nav>
+    <main id="send-page">
+        <h2>ส่งคำอวยพรให้ฟูมิ</h2>
+        <form action="">
+            <label for="name">ชื่อ</label>
+            <input type="text" name="name" id="name" value="คุณมนุษย์">
+
+            <label for="message">ข้อความ</label>
+            <textarea name="message" id="message">สุขสันต์วันเกิดน้าฟูมิจัง</textarea>
+
+            <label for="message-card">หน้าตาการ์ด</label>
+            <select name="message-card" id="message-card">
+                <option value="red">ธีมสีแดง</option>
+                <option value="yellow">ธีมสีเหลือง</option>
+                <option value="brown">ธีมสีน้ำตาล</option>
+                <option value="cyan">ธีมสีฟ้า</option>
+            </select>
+
+            <label for="sticker">สติ๊กเกอร์</label>
+            <select name="sticker" id="sticker">
+                <option value="fumi">สติ๊กเกอร์ฟูมิ</option>
+                <option value="dough_kun">สติ๊กเกอร์โดคุง</option>
+                <option value="human">สติ๊กเกอร์คุณมนุษย์</option>
+                <option value="raccoon">สติ๊กเกอร์แรคคูณ</option>
+            </select>
+        </form>
+    </main>
 </body>
+<script src="navbar.js"></script>
 </html>
