@@ -1,11 +1,14 @@
 :root {
     --fumi-red-clr: #de3653;
+    --fumi-red-hover-clr: #cc2945;
+    --white-hover-clr: rgb(245, 245, 245);
     --fumi-gold-clr: #ffc966;
     --fumi-cloud-clr: #71d7cd;
     --dough-clr: #fff8e8;
     --bread-clr: #e6B890;
     --border-clr: #7d4740;
     --violetter-clr: #662d91;
+    --text-black-clr: #1B1212;
 }
 
 
@@ -22,7 +25,23 @@
 
 body {
     min-height: 100vh;
-    background-color: var(--dough-clr);
+    background-color: #ffe9d4;
+}
+
+/* Shared styles */
+h2 {
+    font-size: clamp(1.75rem, 1.5357rem + 1.0714vw, 2.5rem);
+    font-weight: 600;
+    font-family: "Mitr", sans-serif;
+    margin-top: 1rem;
+}
+
+main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Delete picture and video if didn't use in final */
@@ -87,11 +106,11 @@ img, svg, picture, video {
 }
 
 .nav-brand {
-    font-size: clamp(1.25rem, 1.206rem + 0.1878vw, 1.375rem);
+    font-size: clamp(1.5rem, 1.4286rem + 0.3571vw, 1.75rem);
     margin-left: 1rem;
     padding: 1rem;
     display: block;
-    transition: color ease-in-out 0.15s;
+    transition: color ease-in-out 0.2s;
 }
 
 .nav-brand:hover {
@@ -106,10 +125,10 @@ img, svg, picture, video {
 
 
 .nav-menu ul li a {
-    font-size: clamp(1rem, 0.956rem + 0.1878vw, 1.125rem);
+    font-size: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
     padding: 1rem;
     display: block;
-    transition: color, background-color ease-in-out 0.15s;
+    transition: color ease-in-out 0.2s, background-color ease-in-out 0.2s;
 }
 
 .nav-menu ul li a:hover, .nav-menu ul a.active {
@@ -119,6 +138,10 @@ img, svg, picture, video {
 
 .nav-toggle {
     display: none;
+}
+
+#display-page {
+    min-height: 400vh;
 }
 
 
@@ -146,17 +169,17 @@ img, svg, picture, video {
         position: absolute;
         display: flex;
         align-items: center;
-        top: 3.5rem;
+        top: 3.4rem;
         width: 100%;
         background-color: #ca364e;
-        transition: max-height ease-in-out 0.3s;
-        border-top: 1px solid white;
+        transition: max-height ease-in-out 0.3s;    
         max-height: 0;
         overflow: hidden;
     }
 
     .nav-menu.show {
         max-height: 230px;
+        border-top: 1px solid white;
     }
 
     .navbar {
