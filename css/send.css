@@ -1,0 +1,66 @@
+label {
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+label:not(:first-child), .select label {
+    margin-top: .5rem;
+}
+
+label[for="card"] {
+    grid-area: card-label;
+}
+
+label[for="sticker"] {
+    grid-area: sticker-label;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.send-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem;
+    background-color: var(--dough-clr);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-top: .5rem;
+}
+
+.send-form-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+textarea:focus, input:focus, select{
+    outline: none;
+}
+
+.send-form-container textarea, .send-form-container input, .select select {
+    padding: .25rem;
+    border-radius: 10px;
+    border: 2px solid var(--bread-clr)
+}
+
+.send-form-container textarea {
+    min-height: 6rem;
+}
+
+.select {
+    display: grid;
+    grid-template-areas: 
+    "card-label sticker-label"
+    "card-input card-input";
+    grid-template-columns: 1fr 1fr;
+    column-gap: .5rem;
+}
+
+.card-example-container {
+    margin-top: .75rem;
+}

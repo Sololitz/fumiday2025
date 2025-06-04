@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fumi's Day 2025: ส่งข้อความอวยพร</title>
+    <title>Fumi's Day 2025: ส่งคำอวยพร</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/send.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,30 +27,41 @@
     </nav>
     <main id="send-page">
         <h2>ส่งคำอวยพรให้ฟูมิ</h2>
-        <form action="">
-            <label for="name">ชื่อ</label>
-            <input type="text" name="name" id="name" value="คุณมนุษย์">
+        <div class="send-form-container mitr-regular">
+            <form id="send-form">
+                <label for="name">ชื่อ</label>
+                <input type="text" name="name" id="name" value="คุณมนุษย์" placeholder="ชื่อ">
 
-            <label for="message">ข้อความ</label>
-            <textarea name="message" id="message">สุขสันต์วันเกิดน้าฟูมิจัง</textarea>
+                <label for="message">ข้อความ</label>
+                <textarea name="message" id="message" placeholder="ข้อความอวยพร">สุขสันต์วันเกิดน้าฟูมิจัง</textarea>
 
-            <label for="message-card">หน้าตาการ์ด</label>
-            <select name="message-card" id="message-card">
-                <option value="red">ธีมสีแดง</option>
-                <option value="yellow">ธีมสีเหลือง</option>
-                <option value="brown">ธีมสีน้ำตาล</option>
-                <option value="cyan">ธีมสีฟ้า</option>
-            </select>
+                <div class="select">
+                    <label for="card">หน้าตาการ์ด</label>
+                    <select name="card" id="message-card">
+                        <option value="red">ธีมสีแดง</option>
+                        <option value="yellow">ธีมสีเหลือง</option>
+                        <option value="brown">ธีมสีน้ำตาล</option>
+                        <option value="cyan">ธีมสีฟ้า</option>
+                    </select>
 
-            <label for="sticker">สติ๊กเกอร์</label>
-            <select name="sticker" id="sticker">
-                <option value="fumi">สติ๊กเกอร์ฟูมิ</option>
-                <option value="dough_kun">สติ๊กเกอร์โดคุง</option>
-                <option value="human">สติ๊กเกอร์คุณมนุษย์</option>
-                <option value="raccoon">สติ๊กเกอร์แรคคูณ</option>
-            </select>
-        </form>
+                    <label for="sticker">สติ๊กเกอร์</label>
+                    <select name="sticker" id="sticker">
+                        <option value="fumi">ลายฟูมิ</option>
+                        <option value="dough_kun">ลายโดคุง</option>
+                        <option value="human">ลายคุณมนุษย์</option>
+                        <option value="raccoon">ลายแรคคูณ</option>
+                    </select>
+                </div>         
+            </form>
+            <div class="card-example-container">
+                <h3>ตัวอย่างการ์ดอวยพร</h3>
+                <div class="card">
+                    <img src="/images/stickers/human.png" alt="dough kung sticker" class="sticker">
+                </div>
+            </div>
+            <button type="submit" form="send-form">ส่งคำอวยพร</button>         
+        </div>     
     </main>
 </body>
-<script src="navbar.js"></script>
+<script src="js/navbar.js"></script>
 </html>
