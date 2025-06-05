@@ -1,0 +1,134 @@
+/* Card component */
+.card {
+    padding: 1rem;
+    max-width: 400px;
+    position: relative;
+    min-width: 250px;
+}
+
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+}
+
+.card-name {
+    margin-left: 0.5rem;
+    font-size: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.card-message {
+    word-break: break-word;
+    min-height: 200px;
+}
+
+.card-footer, .card-count {
+    font-size: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+}
+
+.card-footer {
+    margin-bottom: 1rem;
+}
+
+.sticker {
+    width: 35%;
+    max-width: 105px;
+}
+
+.card-count {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.5rem 0px 0px 0.5rem;
+    color: white;
+}
+
+
+/* Red theme card */
+.red {
+    border: 8px solid var(--fumi-red-clr);
+    background-color: #ffdae1;
+    color: #60010f
+}
+
+.red hr {
+    border: 1px solid var(--fumi-red-clr);
+    opacity: 0.5;
+}
+
+.red .card-count {
+    background-color: var(--fumi-red-clr);
+    border-top-left-radius: 360px;
+}
+
+
+/* Yellow theme card */
+.gold {
+    border: 8px solid var(--fumi-gold-clr);
+    background-color: #fff6e5;
+    color: #533803
+}
+
+.gold hr {
+    border: 1px solid var(--fumi-gold-clr);
+    opacity: 0.5;
+}
+
+.gold .card-count {
+    background-color: var(--fumi-gold-clr);
+    border-top-left-radius: 360px;
+}
+
+
+/* Brown theme card */
+.brown {
+    border: 8px solid var(--border-clr);
+    background-color: #ffdfc3;
+    color: #510c03
+}
+
+.brown hr {
+    border: 1px solid var(--border-clr);
+    opacity: 0.5;
+}
+
+.brown .card-count {
+    background-color: var(--border-clr);
+    border-top-left-radius: 360px;
+}
+
+
+/* Cyan theme card */
+.cyan {
+    border: 8px solid var(--fumi-cloud-clr);
+    background-color: #e8fffd;
+    color: #014740
+}
+
+.cyan hr {
+    border: 1px solid var(--fumi-cloud-clr);
+    opacity: 0.5;
+}
+
+.cyan .card-count {
+    background-color: var(--fumi-cloud-clr);
+    border-top-left-radius: 360px;
+}
+
+
+@media (min-width: 375px) {
+    .card-footer {
+        margin-bottom: 0px;
+    }
+    
+    .card {
+        min-width: 325px;
+    }
+}

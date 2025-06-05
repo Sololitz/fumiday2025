@@ -9,6 +9,7 @@
     --border-clr: #7d4740;
     --violetter-clr: #662d91;
     --text-black-clr: #1B1212;
+    --error-clr: #ff3333;
 }
 
 
@@ -28,12 +29,20 @@ body {
     background-color: #ffe9d4;
 }
 
+/* Delete picture and video if didn't use in final */
+img, svg, picture, video {
+    display: block;
+    max-width: 100%;
+}
+
+
 /* Shared styles */
 h2 {
     font-size: clamp(1.75rem, 1.5357rem + 1.0714vw, 2.5rem);
     font-weight: 600;
     font-family: "Mitr", sans-serif;
     margin-top: 1rem;
+    color: var(--text-black-clr);
 }
 
 main {
@@ -42,12 +51,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/* Delete picture and video if didn't use in final */
-img, svg, picture, video {
-    display: block;
-    max-width: 100%;
 }
 
 
@@ -122,7 +125,6 @@ img, svg, picture, video {
     list-style: none;
     margin-right: 1rem;
 }
-
 
 .nav-menu ul li a {
     font-size: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);

@@ -6,6 +6,7 @@
     <title>Fumi's Day 2025: ส่งคำอวยพร</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/send.css">
+    <link rel="stylesheet" href="css/card.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -30,38 +31,59 @@
         <div class="send-form-container mitr-regular">
             <form id="send-form">
                 <label for="name">ชื่อ</label>
-                <input type="text" name="name" id="name" value="คุณมนุษย์" placeholder="ชื่อ">
+                <input type="text" name="name" id="name" value="คุณมนุษย์" placeholder="ชื่อ" autocomplete="off">
+                <span class="error-msg">ชื่อยาวเกิน 20 ตัวอักษร</span>
 
                 <label for="message">ข้อความ</label>
                 <textarea name="message" id="message" placeholder="ข้อความอวยพร">สุขสันต์วันเกิดน้าฟูมิจัง</textarea>
+                <span class="error-msg">ข้อความยาวเกิน 500 ตัวอักษร</span>
 
                 <div class="select">
-                    <label for="card">หน้าตาการ์ด</label>
-                    <select name="card" id="message-card">
-                        <option value="red">ธีมสีแดง</option>
-                        <option value="yellow">ธีมสีเหลือง</option>
-                        <option value="brown">ธีมสีน้ำตาล</option>
-                        <option value="cyan">ธีมสีฟ้า</option>
+                    <label for="select-card">หน้าตาการ์ด</label>
+                    <select name="card" id="select-card">
+                        <option value="red" class="card-option">ธีมสีแดง</option>
+                        <option value="gold" class="card-option">ธีมสีทอง</option>
+                        <option value="brown" class="card-option">ธีมสีน้ำตาล</option>
+                        <option value="cyan" class="card-option">ธีมสีฟ้า</option>
                     </select>
+                    <span class="error-msg card-msg">ธีมการ์ดไม่มีในตัวเลือก</span>
 
-                    <label for="sticker">สติ๊กเกอร์</label>
-                    <select name="sticker" id="sticker">
+                    <label for="select-sticker">สติ๊กเกอร์</label>
+                    <select name="sticker" id="select-sticker">
                         <option value="fumi">ลายฟูมิ</option>
-                        <option value="dough_kun">ลายโดคุง</option>
+                        <option value="dough_kung">ลายโดคุง</option>
                         <option value="human">ลายคุณมนุษย์</option>
                         <option value="raccoon">ลายแรคคูณ</option>
                     </select>
-                </div>         
+                    <span class="error-msg sticker-msg">สติ๊กเกอร์ไม่มีในตัวเลือก</span>
+                </div>
+                <button type="submit" form="send-form" class="submit-btn xl">ส่งคำอวยพร</button>         
             </form>
             <div class="card-example-container">
                 <h3>ตัวอย่างการ์ดอวยพร</h3>
-                <div class="card">
-                    <img src="/images/stickers/human.png" alt="dough kung sticker" class="sticker">
+                <div class="card red" id="card-example">
+                    <div class="card-header">
+                        <img src="/images/stickers/fumi.png" alt="fumi sticker" class="sticker" id="sticker-example">
+                        <span class="card-name">ชื่อ...</span>
+                    </div>
+                    <hr>
+                    <p class="card-message">
+                        ข้อความ...
+                    </p>
+                    <hr>
+                    <div class="card-footer">
+                        <span>ส่งเมื่อ:</span>
+                        <time>yyyy-mm-dd hh:mm:ss</time>
+                    </div>
+                    <span class="card-count">#ใบที่</span>
                 </div>
             </div>
-            <button type="submit" form="send-form">ส่งคำอวยพร</button>         
+            <button type="submit" form="send-form" class="submit-btn sm">ส่งคำอวยพร</button>         
         </div>     
     </main>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/navbar.js"></script>
+<script src="js/card_example.js"></script>
+<script src="js/send.js"></script>
 </html>

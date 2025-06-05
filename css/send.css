@@ -7,17 +7,19 @@ label:not(:first-child), .select label {
     margin-top: .5rem;
 }
 
-label[for="card"] {
+label[for="select-card"] {
     grid-area: card-label;
 }
 
-label[for="sticker"] {
+label[for="select-sticker"] {
     grid-area: sticker-label;
 }
 
 h3 {
     font-size: 1.5rem;
     font-weight: 500;
+    text-align: center;
+    margin-bottom: .5rem;
 }
 
 .send-form-container {
@@ -28,8 +30,11 @@ h3 {
     max-width: 600px;
     padding: 1rem;
     background-color: var(--dough-clr);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 4px solid var(--border-clr);
+    border-radius: 10px;
     margin-top: .5rem;
+    margin-bottom: 1rem;
+    color: var(--text-black-clr)
 }
 
 .send-form-container form {
@@ -56,11 +61,96 @@ textarea:focus, input:focus, select{
     display: grid;
     grid-template-areas: 
     "card-label sticker-label"
-    "card-input card-input";
+    "card-input sticker-input"
+    "card-error sticker-error";
     grid-template-columns: 1fr 1fr;
     column-gap: .5rem;
 }
 
+.error-msg {
+    display: none;
+    padding-left: .25rem;
+    margin-top: .25rem;
+    font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+    color: var(--error-clr)
+}
+
+.error-msg.show {
+    display: block;
+}
+
+.card-msg {
+    grid-area: card-error;
+}
+
+.sticker-msg {
+    grid-area: sticker-error;
+}
+
 .card-example-container {
     margin-top: .75rem;
+}
+
+.submit-btn {
+    margin-top: 1.5rem;
+    padding: .75em;
+    font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+    color: white;
+    background-color: var(--fumi-red-clr);
+    border: none;
+    border-radius: 40px;
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: var(--fumi-red-hover-clr);
+    color: var(--white-hover-clr);
+}
+
+.send-form-container textarea.invalid, .send-form-container input.invalid, .select select.invalid  {
+    border: 2px solid var(--error-clr);
+}
+
+.xl {
+    display: none
+}
+
+@media (min-width: 1280px) {
+    .send-form-container {
+        flex-direction: row;
+        max-width: 1000px;
+        padding-right: 0;
+        padding-left: 2rem;
+    }
+
+    #send-form, .card-example-container {
+        flex: 1 1 0px;
+    }
+
+    #send-form {
+        align-self: start;
+        margin-top: 1rem;
+    }
+
+    .card-example-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 450px;
+    }
+
+    .sm {
+        display: none;
+    }
+
+    .xl {
+        display: block;
+        max-width: 150px;
+        align-self: center;
+    }
+
+    .send-form-container textarea {
+        min-height: 13rem;
+    }
 }
