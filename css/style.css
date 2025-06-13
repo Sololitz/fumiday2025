@@ -37,12 +37,16 @@ img, svg, picture, video {
 
 
 /* Shared styles */
-h2 {
-    font-size: clamp(1.75rem, 1.5357rem + 1.0714vw, 2.5rem);
+.page-header {
+    font-size: clamp(1.5rem, 1.3239rem + 0.7512vw, 2rem);
     font-weight: 600;
     font-family: "Mitr", sans-serif;
     margin-top: 1rem;
-    color: var(--text-black-clr);
+    color: white;
+    background-color: #5A3935;
+    padding: .5rem .75rem;
+    border-radius: 40px;
+    border: 4px solid #4b2a27;
 }
 
 main {
@@ -108,7 +112,7 @@ main {
     color: white;
 }
 
-.nav-brand {
+.navbar .nav-brand {
     font-size: clamp(1.5rem, 1.4286rem + 0.3571vw, 1.75rem);
     margin-left: 1rem;
     padding: 1rem;
@@ -142,10 +146,42 @@ main {
     display: none;
 }
 
-#display-page {
-    min-height: 400vh;
+/* footer */
+footer {
+    margin-top: 2rem;
+    background-color: var(--fumi-red-clr);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.footer-social {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: .25rem;
+}
+
+footer h3 {
+    font-size: clamp(1.125rem, 1.0179rem + 0.5357vw, 1.5rem);
+    color: white;
+    margin-bottom: 0;
+}
+
+.icon8, .icon8 a {
+    font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+    color: white;
+    margin-top: .5rem;
+}
+
+.disclaimer {
+    font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
+    color: white;
+    margin-top: .5rem;
+    text-align: center;
+}
 
 @media (max-width: 768px) {
     /* Navbar mobile part */
@@ -202,6 +238,10 @@ main {
     .nav-menu ul li a:hover,.nav-menu ul a.active{
         color: rgb(228, 228, 228);
         background-color: #b62e45;
+    }
+
+    footer svg {
+        width: 32px;
     }
 }
 

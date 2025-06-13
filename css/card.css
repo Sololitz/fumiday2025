@@ -1,9 +1,11 @@
 /* Card component */
 .card {
     padding: 1rem;
-    max-width: 400px;
     position: relative;
     min-width: 250px;
+    max-width: 425px;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -18,7 +20,7 @@ hr {
 }
 
 .card-name {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     font-size: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
     font-weight: 500;
     word-break: break-word;
@@ -27,6 +29,7 @@ hr {
 .card-message {
     word-break: break-word;
     min-height: 200px;
+    flex-grow: 1;
 }
 
 .card-footer, .card-count {
