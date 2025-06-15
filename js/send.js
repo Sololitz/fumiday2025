@@ -65,6 +65,7 @@ function highlightInvalidFields(fields) {
     fields.forEach(field => {
         const input = document.getElementById(field);
         if (input) {
+            input.previousElementSibling.classList.add('error-label')
             input.classList.add('invalid');
             input.nextElementSibling.classList.add('show')
         }
@@ -129,9 +130,35 @@ messageForm.addEventListener('submit', event => {
     }
 });
 
+function characterLimit(field, maxchar, limitLabel) {
+    limitLabel.textContent = `${field.value.length}/${maxchar}`
+    if (field.value.length > maxchar) {
+        field.classList.add('invalid');
+        field.previousElementSibling.classList.add('error-label');
+        field.nextElementSibling.classList.add('show')
+    }
+
+    else if (field.value.length <= maxchar && field.classList.contains('invalid')) {
+        field.previousElementSibling.classList.remove('error-label');
+        field.classList.remove('invalid')
+        if (field.nextElementSibling.classList.contains('show')) {
+            field.nextElementSibling.classList.remove('show');
+        }   
+    }
+}
+
 messageForm.addEventListener('input', event => {
-    if (event.target.classList.contains('invalid')) {
+    if (event.target.id == "name") {
+        characterLimit(event.target, 20, document.querySelector('.name-limit'));
+    }
+
+    else if (event.target.id == "message") {
+        characterLimit(event.target, 500, document.querySelector('.message-limit'));
+    }
+
+    else if (event.target.classList.contains('invalid')) {
         event.target.classList.remove('invalid');
         event.target.nextElementSibling.classList.remove('show');
+        event.target.previousElementSibling.classList.remove('error-label');
     }
 })

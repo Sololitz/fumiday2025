@@ -5,7 +5,7 @@
 
 label {
     font-weight: 500;
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
 }
 
 label:not(:first-child), .select label {
@@ -82,6 +82,14 @@ textarea:focus, input:focus, select{
 
 .error-msg.show {
     display: block;
+}
+
+.error-label {
+    color: var(--error-clr)
+}
+
+.message-limit, .name-limit {
+    font-size: clamp(0.75rem, 0.7143rem + 0.1786vw, 0.875rem);
 }
 
 .card-msg {
