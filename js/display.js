@@ -3,10 +3,14 @@ let isLoading = false;
 let finished = false;
 let cardNumber;
 const wishContainer = document.querySelector('.wish-container');
+const loader = document.querySelector('.loader');
 
 async function loadMessages() {
-    if (isLoading || finished) return;
+    if (isLoading || finished) {
+        return;
+    }
 
+    loader.style.display = "block"  
     isLoading = true;
 
     try {
@@ -17,13 +21,12 @@ async function loadMessages() {
         }
 
         const wishes = await res.json();
-        if (!wishes) {
+        if (!wishes) {   
             return;
-        }   
-        
-        if (wishes.length === 0) {
+        }    
+
+        if (wishes.length < 6) {
             finished = true;
-            return;
         }
         
         wishes.forEach(wish => {
@@ -33,7 +36,7 @@ async function loadMessages() {
 
             wishComponent.innerHTML = `
                     <div class="card-header">
-                        <img src="/images/stickers/${wish.sticker}.png" alt="fumi sticker" class="sticker" id="sticker-example loading="lazy"">
+                        <img src="/images/stickers/${wish.sticker}.png" alt="fumi sticker" class="sticker" id="sticker-example" loading="lazy">
                         <span class="card-name">${wish.name}</span>
                     </div>
                     <hr>
@@ -56,12 +59,17 @@ async function loadMessages() {
     catch(error) {
         console.log(error);
     }
-
-    isLoading = false;
+    
+    finally {
+        loader.style.display = "none";
+        isLoading = false;
+    }
+ 
 };
 
 
 window.addEventListener("scroll", () => {
+    if (finished) return;
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
         loadMessages();
     }

@@ -10,6 +10,21 @@
     margin-bottom: 1rem;
 }
 
+.loader {
+  border: 12px solid #ffe9d4; /* Light grey */
+  border-top: 12px solid var(--border-clr); /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @media (min-width: 768px) {
     .wish-container {
         grid-template-columns: repeat(2, minmax(250px, 1fr));
