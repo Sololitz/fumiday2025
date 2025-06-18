@@ -2,7 +2,7 @@ const messageForm = document.getElementById('send-form');
 
 async function sendWish(data) {
     try {
-        const res = await fetch('http://127.0.0.1:5000/api/wish', {
+        const res = await fetch('https://fumi-birthday-back-end.onrender.com/api/wish', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
