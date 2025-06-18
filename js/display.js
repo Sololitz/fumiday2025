@@ -36,7 +36,7 @@ async function loadMessages() {
 
             wishComponent.innerHTML = `
                     <div class="card-header">
-                        <img src="/images/stickers/${wish.sticker}.png" alt="fumi sticker" class="sticker" id="sticker-example" loading="lazy">
+                        <img src="images/stickers/${wish.sticker}.png" alt="fumi sticker" class="sticker" id="sticker-example" loading="lazy">
                         <span class="card-name">${wish.name}</span>
                     </div>
                     <hr>
