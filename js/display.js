@@ -14,7 +14,7 @@ async function loadMessages() {
     isLoading = true;
 
     try {
-        const res = await fetch(`http://127.0.0.1:5000/api/wish?offset=${offset}`);
+        const res = await fetch(`https://fumi-birthday-back-end.onrender.com/api/wish?offset=${offset}`);
         if (!res.ok) {
             console.log('Response status:', res.status);
             return;
@@ -78,7 +78,7 @@ window.addEventListener("scroll", () => {
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const res = await fetch('http://127.0.0.1:5000/api/wish_count');
+        const res = await fetch('https://fumi-birthday-back-end.onrender.com/api/wish_count');
         if (!res.ok) {
             console.log('Response status:', res.status);
             return;
