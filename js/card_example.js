@@ -14,7 +14,7 @@ selectCard.addEventListener('change', event => {
 
 selectSticker.addEventListener('change', event => {
     if (stickerOption.includes(event.target.value)) {
-        exampleSticker.setAttribute('src', `/images/stickers/${event.target.value}.png`);
+        exampleSticker.setAttribute('src', `images/stickers/${event.target.value}.png`);
         exampleSticker.setAttribute('alt', `${event.target.value.replace('_', ' ')} sticker`);
     }  
 })
