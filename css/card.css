@@ -6,6 +6,9 @@
     max-width: 425px;
     display: flex;
     flex-direction: column;
+}
+
+.card:not(#card-example) {
     z-index: -1;
 }
 
