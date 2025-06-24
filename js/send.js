@@ -115,7 +115,7 @@ messageForm.addEventListener('submit', event => {
     else {
         Swal.fire({
             title: "ส่งเลยมั้ย?",
-            text: "สามารถส่งคำอวยพรฟูมิได้แค่ครั้งเดียวนะครับ",
+            text: "สามารถส่งคำอวยพรฟูมิได้แค่วันละข้อความนะครับ",
             icon: "question",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
