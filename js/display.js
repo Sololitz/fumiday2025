@@ -32,7 +32,7 @@ async function loadMessages() {
         wishes.forEach(wish => {
             const wishComponent = document.createElement('div');
             wishComponent.classList.add('card', wish.card);
-            wish.timestamp = new Date(wish.timestamp).toISOString().replace('T', ' ').substring(0, 19);
+            wish.timestamp = new Date(wish.timestamp).toISOString().replace('T', ' ').substring(0, 19).toLocaleString();
 
             wishComponent.innerHTML = `
                     <div class="card-header">
@@ -46,7 +46,7 @@ async function loadMessages() {
                     <hr>
                     <div class="card-footer">
                         <span>ส่งเมื่อ:</span>
-                        <time>${wish.timestamp.toLocaleString()}</time>
+                        <time>${wish.timestamp}</time>
                     </div>
                     <span class="card-count">#${cardNumber}</span>`;
             
