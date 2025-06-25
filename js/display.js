@@ -5,6 +5,25 @@ let cardNumber;
 const wishContainer = document.querySelector('.wish-container');
 const loader = document.querySelector('.loader');
 
+function formatThaiTimestamp(utcTimestamp) {
+    const date = new Date(utcTimestamp);
+
+    // Convert to Thai timezone
+    const thaiTime = new Date(date.toLocaleString("en-US", {
+        timeZone: "Asia/Bangkok"
+    }));
+
+    // Format to yyyy-mm-dd hh:mm:ss
+    const yyyy = thaiTime.getFullYear();
+    const mm = String(thaiTime.getMonth() + 1).padStart(2, '0');
+    const dd = String(thaiTime.getDate()).padStart(2, '0');
+    const hh = String(thaiTime.getHours()).padStart(2, '0');
+    const min = String(thaiTime.getMinutes()).padStart(2, '0');
+    const sec = String(thaiTime.getSeconds()).padStart(2, '0');
+
+    return `${yyyy}-${mm}-${dd} ${hh}:${min}:${sec}`;
+}
+
 async function loadMessages() {
     if (isLoading || finished) {
         return;
@@ -31,8 +50,8 @@ async function loadMessages() {
         
         wishes.forEach(wish => {
             const wishComponent = document.createElement('div');
-            wishComponent.classList.add('card', wish.card);
-            wish.timestamp = new Date(wish.timestamp).toISOString().replace('T', ' ').substring(0, 19).toLocaleString();
+            wishComponent.classList.add('card', wish.card);            
+            wish.timestamp = formatThaiTimestamp(wish.timestamp);
 
             wishComponent.innerHTML = `
                     <div class="card-header">
