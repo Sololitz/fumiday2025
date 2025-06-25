@@ -46,7 +46,7 @@ async function loadMessages() {
                     <hr>
                     <div class="card-footer">
                         <span>ส่งเมื่อ:</span>
-                        <time>${wish.timestamp}</time>
+                        <time>${wish.timestamp.toLocaleString()}</time>
                     </div>
                     <span class="card-count">#${cardNumber}</span>`;
             
